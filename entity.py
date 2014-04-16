@@ -7,6 +7,14 @@ class Object:
     name = ''
     parent = None
 
+    def move_to(self, parent, new_name=None):
+        new_name = new_name or self.name
+        parent[new_name] = self
+
+    def copy_to(self, parent, new_name=None):
+        new_name = new_name or self.name
+        parent[new_name] = copy(self)
+        
 class Item(Object):
 
     content_type = ''
