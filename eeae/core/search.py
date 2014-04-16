@@ -4,6 +4,9 @@ class IIndexer:
     def __init__(self, obj):
         pass
 
+    def _get_document(self):
+        pass
+
     def index(self, recursive=False):
         pass
 
