@@ -6,6 +6,8 @@ class Object:
 
     name = ''
     parent = None
+    object_type = 'Object'
+    schemas = ()
 
     def move_to(self, parent, new_name=None):
         new_name = new_name or self.name
@@ -63,8 +65,10 @@ class Root(Container):
     def __init__(self):
         Container.__init__(self)
         self._intids = IntIds()
+        self._recycle_box = RecycleBox()
 
     def get_intid_registry(self):
         return self._intids
     
-    
+    def get_recycle_box(self): 
+        return self._recycle_box
